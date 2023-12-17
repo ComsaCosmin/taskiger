@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "email": "comsa.cosmin.13@gmail.com",
+      "password": "$2a$10$xD2nST3ouD1SiUOE2rR1BO2ffEpW6ejPaEv0ibcXm8IGB.vTm3Wjy",
+      "username": "cosmin",
+      "id": 1
+    }
+  ],
+  "tasks": [
+    {
+      "name": "test222",
+      "description": "test",
+      "userId": 1,
+      "id": 1,
+      "state": "pending"
+    }
+  ]
+}
