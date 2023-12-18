@@ -2,9 +2,17 @@
   "users": [
     {
       "email": "comsa.cosmin.13@gmail.com",
-      "password": "$2a$10$xD2nST3ouD1SiUOE2rR1BO2ffEpW6ejPaEv0ibcXm8IGB.vTm3Wjy",
-      "username": "cosmin",
+      "password": "$2a$10$r/REmfmAqyokzSfQT/ZDMeMdSXC/Cnv8wsDi1SV2B0VsmK4KENWQi",
+      "firstName": "Cosmin",
+      "lastName": "Comsa",
       "id": 1
+    },
+    {
+      "email": "comsa.cosmin.13+1@gmail.com",
+      "password": "$2a$10$pddC9WMvHRl7HdQPeyy3FeeaVXeGNEr/VIpmoMzPNsXWPqjPL1RsO",
+      "firstName": "Cosmin",
+      "lastName": "Comsa",
+      "id": 2
     }
   ],
   "tasks": [
@@ -13,7 +21,7 @@
       "description": "test",
       "userId": 1,
       "id": 1,
-      "state": "pending"
+      "state": "completed"
     }
   ]
 }

@@ -2,9 +2,20 @@
   font-size: 20px;
 }
 .completed-task {
-  color:green;
+  color: green;
 }
 
 .pending-task {
   color: orange;
+}
+
+.toast {
+  margin-top: 20px;
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+}
+.toast-body {
+  font-size: 18px;
+  font-weight: 600;
 }
