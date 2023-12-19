@@ -51,7 +51,7 @@ function AddTask({ modalState, onCloseClick, onTaskAdd }) {
       <Modal show={modalState} onHide={onCloseClick}>
         <Modal.Body>
           <Container className="mt-4">
-            <h2 className="mb-4">Register</h2>
+            <h2 className="mb-4">Add new task</h2>
             <Form>
               <Form.Group controlId="name">
                 <Form.Label>Name:</Form.Label>
