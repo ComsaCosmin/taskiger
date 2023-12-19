@@ -71,7 +71,7 @@ function AddTask({ modalState, onCloseClick, onTaskAdd }) {
               </Form.Group>
 
               <Form.Group controlId="exampleForm.SelectCustom">
-                <Form.Label>Select Option</Form.Label>
+                <Form.Label>Select User</Form.Label>
                 <Form.Control
                   as="select"
                   onChange={(e) => {
