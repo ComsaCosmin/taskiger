@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, Container, Alert, Card } from "react-bootstrap";
+import { Form, Button, Container, Alert, Card, Navbar } from "react-bootstrap";
 import axios from "axios";
 import { useToast } from "./Toast";
 import { useNavigate } from "react-router-dom";
@@ -50,73 +50,84 @@ const Register = () => {
   }
 
   return (
-    <Container className="container mt-4 d-flex flex-column align-items-center">
-      <h2 className="mb-4">Register</h2>
-      <Card className="p-4" style={{ width: "30rem" }}>
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="firstName">
-            <Form.Label>First name:</Form.Label>
-            <Form.Control
-              type="text"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Please provide your first name.
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="lastName">
-            <Form.Label>Last name:</Form.Label>
-            <Form.Control
-              type="text"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Please provide your last name.
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="email">
-            <Form.Label>Email:</Form.Label>
-            <Form.Control
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Please provide a valid email address.
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="password">
-            <Form.Label>Password:</Form.Label>
-            <Form.Control
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Please provide a password.
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Register
-          </Button>
-          {registrationError && (
-            <Alert variant="danger" className="mt-3">
-              {registrationError}
-            </Alert>
-          )}
-        </Form>
-      </Card>
-    </Container>
+    <>
+      <Navbar className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand href="#home">TASKIGER</Navbar.Brand>
+          <Navbar.Toggle />
+        </Container>
+      </Navbar>
+      <Container className="container mt-4 d-flex flex-column align-items-center">
+        <h2 className="mb-4">Register</h2>
+        <Card className="p-4" style={{ width: "30rem" }}>
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="firstName">
+              <Form.Label>First name:</Form.Label>
+              <Form.Control
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+              />
+              <Form.Control.Feedback type="invalid">
+                Please provide your first name.
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="lastName">
+              <Form.Label>Last name:</Form.Label>
+              <Form.Control
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+              />
+              <Form.Control.Feedback type="invalid">
+                Please provide your last name.
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="email">
+              <Form.Label>Email:</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid email address.
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="password">
+              <Form.Label>Password:</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              <Form.Control.Feedback type="invalid">
+                Please provide a password.
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Register
+            </Button>
+            {registrationError && (
+              <Alert variant="danger" className="mt-3">
+                {registrationError}
+              </Alert>
+            )}
+          </Form>
+        </Card>
+        <div className="mt-2" onClick={moveToLogin}>
+          Already a member? Login!
+        </div>
+      </Container>
+    </>
   );
 };
 

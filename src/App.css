@@ -14,8 +14,15 @@
   margin-right: 20px;
   position: absolute;
   right: 0;
+  z-index: 1000;
 }
 .toast-body {
   font-size: 18px;
   font-weight: 600;
+}
+.show-pointer {
+  cursor: pointer;
+}
+.font-size-12 {
+  font-size: 12px;
 }

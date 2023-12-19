@@ -20,15 +20,32 @@ function EditUser({ modalState, onCloseClick, user }) {
   }
 
   const editUserAction = () => {
-    axios
-      .patch(`http://localhost:3000/users/${returnUserObject().id}`, {
+    let editedUserObject = {};
+
+    if (password == "") {
+      editedUserObject = {
         firstName: firstName,
         lastName: lastName,
+        email: email,
+      };
+    } else {
+      editedUserObject = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
         password: password,
-      })
+      };
+    }
+    axios
+      .patch(
+        `http://localhost:3000/users/${returnUserObject().id}`,
+        editedUserObject
+      )
       .then((res) => {
         // setIsLoggedIn(true);
         onCloseClick();
+        console.log(res);
+        localStorage.setItem("userObject", JSON.stringify(res.data));
       })
       .catch((error) => {
         console.log(error);

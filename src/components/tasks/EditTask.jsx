@@ -22,7 +22,7 @@ function AddTask({ modalState, onCloseClick, getAllTasks, task }) {
       .patch(`http://localhost:3000/tasks/${task.id}`, {
         name: name,
         description: description,
-        userId: returnUserObject().id,
+        user: returnUserObject().firstName,
         state: "pending",
       })
       .then((res) => {

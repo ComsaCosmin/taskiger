@@ -11,38 +11,58 @@ const Dashboard = () => {
   const [taskRefresh, setTaskRefresh] = useState("false");
 
   const [show, setShow] = useState(false);
+  const [showForTask, setShowForTask] = useState(false);
 
-  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+
+  const handleCloseForTask = () => setShowForTask(false);
+  const handleShowForTask = () => setShowForTask(true);
 
   function moveToRegister() {
     navigate("/register");
   }
 
-  const closeModal = (test) => {
+  const closeModal = () => {
+    handleCloseForTask();
     handleClose();
   };
 
   const refreshTask = () => {
-    setTaskRefresh("test");
+    setTaskRefresh();
   };
 
   const returnUserObject = () => {
     return JSON.parse(localStorage.getItem("userObject"));
   };
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userObject");
+    navigate("/login");
+  };
+
   return (
     <>
       <Navbar className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+          <Navbar.Brand href="#home">TASKIGER</Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              Signed in as:{" "}
-              <a className="text-capitalize" onClick={handleShow}>
-                {returnUserObject().username}
-              </a>
+              Hello:
+              <span
+                className="text-capitalize ms-1 show-pointer"
+                onClick={handleShow}
+              >
+                {returnUserObject().firstName}
+              </span>
+              <span
+                className="text-capitalize ms-1 text-primary show-pointer"
+                onClick={logout}
+              >
+                Logout
+              </span>
             </Navbar.Text>
           </Navbar.Collapse>
         </Container>
@@ -50,13 +70,12 @@ const Dashboard = () => {
       <Container>
         <Row>
           <h3 className="mt-4 pt-4">Your tasks</h3>
-          <div onClick={handleShow}>Salut, {returnUserObject().username}</div>
           <Tasks taskRefresh={taskRefresh} />
-          <Button variant="primary" onClick={handleShow}>
+          <Button variant="primary" onClick={handleShowForTask}>
             Add new Task
           </Button>
           <AddTask
-            modalState={show}
+            modalState={showForTask}
             onCloseClick={closeModal}
             onTaskAdd={refreshTask}
           />

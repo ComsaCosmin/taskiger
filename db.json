@@ -2,26 +2,40 @@
   "users": [
     {
       "email": "comsa.cosmin.13@gmail.com",
-      "password": "$2a$10$r/REmfmAqyokzSfQT/ZDMeMdSXC/Cnv8wsDi1SV2B0VsmK4KENWQi",
+      "password": "$2a$10$xV0r00Pb76URxP/nw0V06.niC/0.1wDgnTQ54TvGzcHD8LVXPLp5K",
       "firstName": "Cosmin",
       "lastName": "Comsa",
       "id": 1
     },
     {
       "email": "comsa.cosmin.13+1@gmail.com",
-      "password": "$2a$10$pddC9WMvHRl7HdQPeyy3FeeaVXeGNEr/VIpmoMzPNsXWPqjPL1RsO",
-      "firstName": "Cosmin",
+      "password": "$2a$10$J8C7DoQ6DorKsdBhhgkc..9e6b0V45UPxYaXJD/I1jjhe3hrfyOwO",
+      "firstName": "Cosmin2",
       "lastName": "Comsa",
       "id": 2
     }
   ],
   "tasks": [
     {
-      "name": "test222",
-      "description": "test",
-      "userId": 1,
-      "id": 1,
-      "state": "completed"
+      "name": "Create a login page",
+      "description": "Create a login page with email and password",
+      "user": "Cosmin",
+      "state": "pending",
+      "id": 1
+    },
+    {
+      "name": "Create a list of items",
+      "description": "The list should be paginated",
+      "user": "Cosmin2",
+      "state": "completed",
+      "id": 2
+    },
+    {
+      "name": "Create a logout button",
+      "description": "Create the button using material design concepts",
+      "user": "Cosmin",
+      "state": "pending",
+      "id": 3
     }
   ]
 }
